@@ -6,12 +6,12 @@ const Numbers = ['0','1', '2', '3','4','5','6','7','8','9'];
 const specialCharacters = ['!', '@','#','$','%','^','&','*','<','>','?'];
 
 // Write password to the #password input
-var password = generatePassword(); {
+function generatePass() {
   var lengthSt = prompt('How long do you want your Password to be?');
 
   var length = parseInt(lengthSt);
 
-  if (length < 8) {
+  if (length < 8 || lengthSt == '') {
     alert('Password length must be at least 8 characters.');
     return;
   }
@@ -35,19 +35,32 @@ var password = generatePassword(); {
   }
 
   if(hasSpecialCharacter) {
-    passwordOptions.concat(specialCharacters)
+    passwordOptions = passwordOptions.concat(specialCharacters)
   }
   if(hasNumbers) {
-    passwordOptions.concat(Numbers)
+    passwordOptions = passwordOptions.concat(Numbers)
   }
   if(hasUpperCase) {
-    passwordOptions.concat(upperCase)
+    passwordOptions = passwordOptions.concat(upperCase)
   }
   if(hasLowerCase) {
-    passwordOptions.concat(lowerCase)
+    passwordOptions = passwordOptions.concat(lowerCase)
   }
   
-console.log(generatePassword)
+  
+  for(var i = 0; i < length; i++) {
+    var randomNumber = (Math.floor(Math.random() * passwordOptions.length))
+    var randomChar = passwordOptions[randomNumber];
+
+    randomPassword.push(randomChar);
+  }
+
+return(randomPassword.join(''))
+
+
+
+
+console.log(passwordOptions)
 
   return randomPassword;
 }
