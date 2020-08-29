@@ -6,7 +6,6 @@ const Numbers = ['0','1', '2', '3','4','5','6','7','8','9'];
 const specialCharacters = ['!', '@','#','$','%','^','&','*','<','>','?'];
 
 // Write password to the #password input
-
 var password = generatePassword(); {
   var lengthSt = prompt('How long do you want your Password to be?');
 
@@ -48,8 +47,7 @@ var password = generatePassword(); {
     passwordOptions.concat(lowerCase)
   }
   
-  console.log(passwordOptions)
-
+console.log(generatePassword)
 
   return randomPassword;
 }
